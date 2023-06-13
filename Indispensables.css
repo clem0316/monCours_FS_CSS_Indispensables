@@ -1,0 +1,77 @@
+/* ************** LES INDISPENSABLES EN CSS *************** */
+
+/* CENTRER UN ELEMENT */
+/* Si l'élément est en block */
+
+.titre {
+  text-align: center;
+}
+
+.boite {
+  margin: 0 auto;
+  display: block; /* Cela concerne les éléments qui ne sont pas en block de base dans le navigateur : img, a, span, button */
+}
+
+/* * */
+
+/* ****** LE FLEX ***** */
+
+/* Centrer un élément dans sa boîte (si enfant unique) */
+.parent-de-enfant-unique {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Répartir équitablement sur la même ligne des éléments dans la page */
+.parent-de-plusieurs-enfants {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* * */
+
+/* ***** LE GRID ***** */
+
+/* Répartir précisément des éléments dans la largeur avec des tailles différentes */
+.parent-de-3-elements {
+  display: grid;
+  grid-template-columns: 5% 55% 20%;
+}
+
+/* Créer des grid complexes */
+.parent-des-elements {
+  display: grid;
+  grid-template-columns: 100px 1fr 1fr;
+  grid-template-rows: 1fr 1fr 300px;
+  grid-template-areas:
+    "zone1 zone1 zone1"
+    "zone2 zone2 zone2"
+    "zone3 zone3 zone3";
+}
+
+.enfant1 {
+  grid-area: zone1;
+}
+.enfant2 {
+  grid-area: zone2;
+}
+.enfant3 {
+  grid-area: zone3;
+}
+
+/* * */
+
+/* ***** ABSOLUTE *** */
+
+/* Centrer parfaitement un élément */
+.parent {
+  position: relative;
+}
+.enfant {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%, -50%);
+}
